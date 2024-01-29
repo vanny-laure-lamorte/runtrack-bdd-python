@@ -1,0 +1,1 @@
+mysqldump -u root -p LaPlateforme >Users\Vanny\Plateforme\runtrack-bdd-python\jour1\laplateforme.sql
