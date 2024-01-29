@@ -1,4 +1,3 @@
 SELECT *
 FROM etudiant
-ORDER BY age DESC
-LIMIT 1;
+WHERE age = (SELECT MAX(age) FROM etudiant);
