@@ -1,3 +1,3 @@
 SELECT *
 FROM etudiant
-ORDER BY nom;
+ORDER BY nom ASC;
