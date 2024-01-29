@@ -1,4 +1,3 @@
 SELECT nom, prenom, age, email
 FROM etudiant
-ORDER BY age ASC
-LIMIT 1;
+WHERE age = (SELECT MIN(age) FROM etudiant);
