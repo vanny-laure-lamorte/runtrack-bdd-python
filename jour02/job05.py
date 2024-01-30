@@ -15,4 +15,3 @@ superficie_totale = cursor.fetchone()[0]
 print(f'La superficie de La Plateforme est de {superficie_totale}m2')
 
 cursor.close()
-bdd.close()
