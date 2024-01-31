@@ -9,6 +9,9 @@ class Employe:
             database=database
         )
         self.cursor = self.connection.cursor()
+
+    def close(self):
+        self.connection.close()
         
     def create_employee(self, nom, prenom, salaire, id_service):
         sql = "INSERT INTO employe (nom, prenom, salaire, id_service) VALUES (%s, %s, %s, %s)"
@@ -31,17 +34,21 @@ class Employe:
 
     def delete_employee(self, employee_id):
         sql = "DELETE FROM employe WHERE id = %s"
-        values = (employee_id,)
+        values = (employee_id)
         self.cursor.execute(sql, values)
         self.connection.commit()
 
-employe_manager = Employe("localhost", "root", "azerty", "LaPlateforme2")
+employe_manager = Employe("localhost", "root", "XX", "Plateforme2")
+
 employe_manager.create_employee("Personne", "Test", 4500.00, 2)
-# salarie_manager.read_all_employees()
+# employe_manager.read_all_employees()
 employe_manager.update_employee_salary(1, 3800.00)
-# salarie_manager.read_all_employees()
-# salarie_manager.delete_employee(9)
+# employe_manager.read_all_employees()
+# employe_manager.delete_employee(9)
 employe_manager.read_all_employees()
+
+employe_manager.close()
+
 
 """
 CREATE DATABASE Plateforme2;
@@ -94,7 +101,3 @@ JOIN service ON employe.id_service = service.id
 
 """
 
-class Salaire: 
-
-    def __init__(self):
-        pass

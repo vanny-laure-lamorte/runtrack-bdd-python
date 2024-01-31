@@ -15,3 +15,4 @@ capacite_totale = cursor.fetchone()[0]
 print(f'La capacite de toutes les salles est de :{capacite_totale}')
 
 cursor.close()
+bdd.close()
